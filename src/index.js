@@ -67,8 +67,15 @@ const result = document.querySelector(".result");
 
 searchButton.addEventListener("click", (e) => {
   e.preventDefault();
+
   if(searchInput.value !== "") {
     let searchTerm = searchInput.value;
-    result.textContent = products.find(product => product.name.slice(0, searchTerm.length) === searchTerm).name;  
+    const searchFunction = (product) => product.name.slice(0, searchTerm.length) === searchTerm;
+    if(products.find(product => searchFunction(product)) === undefined) {
+      result.textContent = "No products found.";
+      result.style.color = "red";
+    } else {
+      result.textContent = products.find(product => searchFunction(product)).name;
+    }
   }
 })
