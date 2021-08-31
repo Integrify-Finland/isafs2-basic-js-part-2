@@ -23,6 +23,8 @@ const largest = (...args) => args.reduce((a, b) => Math.max(a,b));
 // 5. Write a function that accepts an unlimited amount of arguments. The arguments are of type number. Return the sum of all of them
 // Ex: sum(1,2,3,4,5) => 15
 
+const sum = (...args) => args.reduce((a,b) => a + b);
+
 // 6. You have a list of products
 const products = [
   { name: 'paint', category: 'household' },
@@ -31,6 +33,13 @@ const products = [
   { name: 'laptop', category: 'computer' },
 ]
 // Target the ul element in index.html and render the above list
+
+const productList = document.querySelector(".product-list");
+products.map(product => {
+  const productListItem = document.createElement("li");
+  productListItem.textContent = product.name;
+  productList.appendChild(productListItem);  
+})
 
 // 7. Target the button in index.html, attach an event listener to it. Every time we click
 // on the button, it will toggle the product list. Show => hide, hide => show
