@@ -44,6 +44,19 @@ products.map(product => {
 // 7. Target the button in index.html, attach an event listener to it. Every time we click
 // on the button, it will toggle the product list. Show => hide, hide => show
 
+const toggleButton = document.querySelector(".toggle");
+productList.style.display = "none";
+toggleButton.textContent = "Show";
+toggleButton.addEventListener("click", () => {
+  if(productList.style.display === "block"){
+    productList.style.display = "none";
+    toggleButton.textContent = "Show";
+  } else {
+    productList.style.display = "block";
+    toggleButton.textContent = "Hide";
+  }
+})
+
 // 8. Target the input element and attach an event listener to it.
 // Once we click search button, you need to use the text input to search for the relevant product name from the list above
 // and show it in the <span> tag
