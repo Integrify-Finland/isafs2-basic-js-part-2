@@ -67,7 +67,6 @@ toggleButton.addEventListener("click", () => {
 
 const form = document.querySelector(".product-form");
 const searchInput = document.querySelector(".search-input");
-const searchButton = document.querySelector(".search-button");
 const result = document.querySelector(".result");
 
 form.addEventListener("submit", (e) => {
