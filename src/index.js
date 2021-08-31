@@ -20,6 +20,10 @@ const filterStudent = (arr) => arr.filter(student => student.name.length > 5);
 
 const largest = (...args) => args.reduce((a, b) => Math.max(a,b));
 
+// alternative solution
+
+const alternativeLargest = (...args) => Math.max(...args);
+
 // 5. Write a function that accepts an unlimited amount of arguments. The arguments are of type number. Return the sum of all of them
 // Ex: sum(1,2,3,4,5) => 15
 
