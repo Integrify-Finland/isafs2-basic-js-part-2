@@ -60,3 +60,15 @@ toggleButton.addEventListener("click", () => {
 // 8. Target the input element and attach an event listener to it.
 // Once we click search button, you need to use the text input to search for the relevant product name from the list above
 // and show it in the <span> tag
+
+const searchInput = document.querySelector(".search-input");
+const searchButton = document.querySelector(".search-button");
+const result = document.querySelector(".result");
+
+searchButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  if(searchInput.value !== "") {
+    let searchTerm = searchInput.value;
+    result.textContent = products.find(product => product.name.slice(0, searchTerm.length) === searchTerm).name;  
+  }
+})
