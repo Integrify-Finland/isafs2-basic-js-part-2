@@ -23,7 +23,7 @@ const largest = (...args) => Math.max(...args)
 // 5. Write a function that accepts an unlimited amount of arguments. The arguments are of type number. Return the sum of all of them
 // Ex: sum(1,2,3,4,5) => 15
 
-const sum = (...args) => [...args].reduce((acc, curr) => acc + curr)
+const sum = (...args) => args.reduce((acc, curr) => acc + curr)
 
 // 6. You have a list of products
 
