@@ -65,11 +65,12 @@ toggleButton.addEventListener("click", () => {
 // Once we click search button, you need to use the text input to search for the relevant product name from the list above
 // and show it in the <span> tag
 
+const form = document.querySelector(".product-form");
 const searchInput = document.querySelector(".search-input");
 const searchButton = document.querySelector(".search-button");
 const result = document.querySelector(".result");
 
-searchButton.addEventListener("click", (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   if(searchInput.value !== "") {
