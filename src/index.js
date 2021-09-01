@@ -114,8 +114,7 @@ function searchFunction(e){
 
 function productNameSearch(product){
   if (product.name.slice(0, input_search.value.length) === input_search.value) {
-    result_found = search_result.innerText = product.name
-    return result_found
+    return search_result.innerText = product.name
   }
 }
 
