@@ -107,8 +107,13 @@ form_search.addEventListener("submit", searchFunction);
 
 
 function searchFunction(e){
-     console.log('search')
-     products.find(productNameSearch)
+     if(input_search.value === ""){
+       alert("Enter your search");
+     }
+     else{
+      products.find(productNameSearch)
+     }
+    
      e.preventDefault();
     }
 
