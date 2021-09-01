@@ -80,12 +80,17 @@ btnToggle.addEventListener('click', function (){
 })
 form.addEventListener('submit',function(e){
   e.preventDefault()
-  console.log(searchInput.value)
-  if(searchInput !== "") {
+  res.textContent = "";
+  if(searchInput.value !== "") {
     console.log(searchInput.value)
     var found = products.find((product)=> product.name === searchInput.value);
     if(found){
       res.textContent = found.name;
+      res.style.color = "green";
+    }
+    else{
+      res.textContent = "Did not match";
+      res.style.color = "red";
     }
     
   }  
