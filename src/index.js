@@ -93,7 +93,11 @@ form.addEventListener('submit',function(e){
       res.style.color = "red";
     }
     
-  }  
+  } 
+  else{
+    res.textContent = "PLZ TYPE SOMETHING !!!"
+    res.style.color = "red";
+  } 
   }) 
 
 
