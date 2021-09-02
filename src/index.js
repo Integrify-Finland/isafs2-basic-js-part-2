@@ -67,11 +67,13 @@ function results(e) {
   console.log(word);
   const searchResult = products.filter(product => {
     //console.log(product.name.slice(0, word.length), word);
-   if(product.name.slice(0, word.length) === word){
+   if(product.name.includes(word)){
      return result.innerHTML = product.name;
    }
     
   });
  // console.log(searchResult);
 }
+
+
 search.addEventListener("click", results);
