@@ -19,9 +19,16 @@
         <h3>Search your product:</h3>
         <form class="product-form">
           <input type="text" class="search-input" name="product" />
-          <button type="submit">search</button>
+
+          <button class="btn2" type="submit">search</button>
+          <div class="clear-list">
+            <button href="!#" class="remove" role="button">Clear List</button> 
+          </div>
         </form>
-        <p>Search result: <span class="result"></span></p>
+        <p>Search result:</p>
+        <ul class="result"></ul>
+        <span id="field-empty"></span>
+        <span id="not-list"></span>
       </section>
     </main>
   </body>
