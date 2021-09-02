@@ -2,7 +2,7 @@
 // Ex: double([1,2,3]) => [2,4,6]
 
 const numbers = [1,2,3];
-const newArr = numbers.map((num)=>{return num*2})
+const newArr = numbers.map((num)=> num*2)
 console.log(newArr)
 
 // 2. Write a function that accepts an array of numbers. Return a new array with only elements that are even number
@@ -17,7 +17,7 @@ console.log(newArr)
 // }
 
 const numbers1 = [1,2,3,4,5,6]
-const newArr1 = numbers1.filter((num)=> {return !(num % 2)})
+const newArr1 = numbers1.filter((num)=> !(num % 2))
 console.log(newArr1)
 
 
@@ -27,9 +27,7 @@ console.log(newArr1)
 //     filterStudent(students) => [{name: "Umer Khan"}, {name: "Duy Nguyen"}]
 
 const students = [{name: "abc"}, {name: "Umer Khan"}, {name: "Duy Nguyen"}]
-const filterStudent = students.filter((student) => {
-  return  student.name.length > 5;
-})
+const filterStudent = students.filter((student) => student.name.length > 5)
 console.log(filterStudent)
 
 
@@ -37,15 +35,22 @@ console.log(filterStudent)
 // Ex: largest(1,2,3,4,5,6) => 6
 // Hint: use Math.max()
 
-const largest = (...allArgs) => {return Math.max(...allArgs)}
+//Finding max number with reduce
+const largest1 = (...allArgs) => allArgs.reduce((num1,num2)=>Math.max(num1,num2),0)
+largest1(3,4,67,8) 
+
+//using only Math.max
+const largest = (...allArgs) => Math.max(...allArgs)
 largest(1,2,3,4,5,6)
+
 
 
 // 5. Write a function that accepts an unlimited amount of arguments. The arguments are of type number. 
 //Return the sum of all of them
 // Ex: sum(1,2,3,4,5) => 15
-let sum = (...allArgs) => allArgs.reduce((accumulator,addnum)=> { return addnum += accumulator})
+let sum = (...allArgs) => allArgs.reduce((accumulator,addnum)=> addnum += accumulator)
 sum(1,2,3,4,5)
+
 
 //another way
 let sum1 = (...allArgs) => {
@@ -111,15 +116,29 @@ function searchFunction(e){
        alert("Enter your search");
      }
      else{
-      products.find(productNameSearch)
+       //arrow function way
+      products.find((product)=>{
+        if(product.name.includes(input_search.value)){
+          return search_result.innerText = product.name
+        }
+      })
      }
+    //  else{
+    //  products.find(productNameSearch)
+    // }
     
      e.preventDefault();
     }
 
-function productNameSearch(product){
-  if (product.name.slice(0, input_search.value.length) === input_search.value) {
-    return search_result.innerText = product.name
-  }
-}
+// function productNameSearch(product){
+
+//   //another method with string.include.
+//   if(product.name.includes(input_search.value)){
+//     return search_result.innerText = product.name
+//   }
+//   //one method with slice
+//   // if (product.name.slice(0, input_search.value.length) === input_search.value) {
+//   //   return search_result.innerText = product.name
+//   // }
+// }
 
