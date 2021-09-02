@@ -57,16 +57,36 @@ const products = [
 const prodList = document.querySelector(".product-list");
 const markup = products.map((prod) => {
 	const li = `<li>${prod.name}</li>`;
-	prodList.insertAdjacentHTML("beforebegin", li);
+	prodList.insertAdjacentHTML("afterbegin", li);
 });
 
 // 7. Target the button in index.html, attach an event listener to it. Every time we click
 // on the button, it will toggle the product list. Show => hide, hide => show
 const button = document.querySelector(".toggle");
 button.addEventListener("click", (e) => {
-	console.log("button clicked");
+	prodList.classList.toggle("hidden");
 });
 
 // 8. Target the input element and attach an event listener to it.
 // Once we click search button, you need to use the text input to search for the relevant product name from the list above
 // and show it in the <span> tag
+const inputField = document.querySelector(".search-input");
+const searchBtn = document.querySelector(".search-btn");
+
+searchBtn.addEventListener("click", (e) => {
+	e.preventDefault();
+	const input = inputField.value;
+	products.find((ele) => {
+		if (ele.name === input) {
+			let node = document.createElement("SPAN");
+			const span = document.querySelector(".result");
+			span.appendChild(document.createElement("h1")).appendChild(
+				document.createTextNode(ele.name)
+			);
+			span.appendChild(document.createElement("h1")).appendChild(
+				document.createTextNode(ele.category)
+			);
+		} else console.log("Cannot find the item");
+	});
+	inputField.value = "";
+});
