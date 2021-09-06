@@ -1,20 +1,67 @@
 // 1. Write a function that accepts an array of numbers. Return a new array with all elements doubled
 // Ex: double([1,2,3]) => [2,4,6]
 
+function doubleArray(array) {
+
+  var doubledNumbers = array.map(n => n * 2);
+  return doubledNumbers;
+
+}
+
 // 2. Write a function that accepts an array of numbers. Return a new array with only elements that are even number
 // Ex: filterEven([1,2,3,4,5,6]) => [2,4,6]
 
+function arrayFilter(array) {
+
+  var filteredNumbers = array.filter(function (x) {
+    if (x % 2 === 0 || x === 0) {
+      return x;
+    }
+  })
+  return filteredNumbers;
+
+}
 // 3. Write a function that accepts an array of student object. Each student object will have a name property. 
 // Return those students that has name length larger than 5
 // Ex: const students = [{name: "abc"}, {name: "Umer Khan"}, {name: "Duy Nguyen"}]
 //     filterStudent(students) => [{name: "Umer Khan"}, {name: "Duy Nguyen"}]
 
+
+//assume a student is an object:
+function filterStudent(student) {
+
+  const result = student.filter(student => student.name.length > 5);
+  return result;
+
+}
+
 // 4. Write a function that accepts an unlimited amount of arguments. The arguments are of type number. Return the largest number
 // Ex: largest(1,2,3,4,5,6) => 6
 // Hint: use Math.max()
 
+function largest(...args) {
+
+  return args.reduce(function (acc, cur) {
+
+    return Math.max(acc, cur);
+  })
+};
+
+
+
 // 5. Write a function that accepts an unlimited amount of arguments. The arguments are of type number. Return the sum of all of them
 // Ex: sum(1,2,3,4,5) => 15
+
+function sum(...args) {
+
+  return args.reduce(function (acc, cur) {
+
+    return acc + cur;
+  })
+};
+
+//----------------------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------------------//
 
 // 6. You have a list of products
 const products = [
@@ -71,14 +118,14 @@ let input = document.getElementById('browser');
 let buttonResult = document.getElementById('button');
 
 let datalist = document.getElementsByTagName("datalist")[0]
-let option   = document.createElement('option');
+let option = document.createElement('option');
 
 let tempProduct = "";
 for (let index = 0; index < products.length; index++) {
-  
+
   let tempProductList = products[index].name;
   tempProduct += "<option>" + tempProductList + "</option>";
-  
+
 }
 
 option.innerHTML = tempProduct;
@@ -100,8 +147,8 @@ input.addEventListener('input', (event) => {
 
     let span = document.querySelector('span');
     span.textContent = temp;
-   
-  
+
+
   })
 
 });
@@ -110,4 +157,3 @@ input.addEventListener('input', (event) => {
 
 
 
-  
