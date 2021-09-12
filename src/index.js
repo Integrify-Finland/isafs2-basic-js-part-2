@@ -7,7 +7,7 @@
 // 2. Write a function that accepts an array of numbers. Return a new array with only elements that are even number
 // Ex: filterEven([1,2,3,4,5,6]) => [2,4,6]
 
-const ArrayOfNums = [1, 2, 3, 4, 5].filter(num => num % 2 == 0)
+const ArrayOfNums = [1, 2, 3, 4, 5].filter(num => num % 2 === 0)
 console.log(ArrayOfNumbers)
 
 // 3. Write a function that accepts an array of student object. Each student object will have a name property. Return those students that has name length larger than 5
@@ -40,6 +40,7 @@ const productList = document.querySelector('.product-list')
 products.forEach(product => {
   const li = document.createElement('li')
   const text = document.createTextNode(`${product.name}-${product.category}`)
+
   li.appendChild(text)
   productList.appendChild(li)
 })
@@ -52,13 +53,14 @@ button.addEventListener('click', () => {
   if(currentStyle === 'block') {
     return productList.style.display = 'none'
   }
+
   productList.style.display = 'block'
 })
 // 8. Target the input element and attach an event listener to it.
 // Once we click search button, you need to use the text input to search for the relevant product name from the list above
 // and show it in the <span> tag
 
-const form = document.querySelector('.prod-form')
+const form = document.querySelector('.product-form')
 const span = document.querySelector('.result')
 
 form.addEventListener('submit', event => {
@@ -75,5 +77,6 @@ form.addEventListener('submit', event => {
   if(!foundProduct) {
     return (span.innerText = 'product not found')
   }
+
   span.innerText = foundProduct.name
 })
