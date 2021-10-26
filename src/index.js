@@ -50,10 +50,8 @@ products.forEach(product => {
 const button = document.querySelector('.toggle')
 button.addEventListener('click', () => {
   const currentStyle = productList.style.display
-  if(currentStyle === 'block') {
-    return productList.style.display = 'none'
-  }
-
+  currentStyle === 'block' ?
+  productList.style.display = 'none' :
   productList.style.display = 'block'
 })
 // 8. Target the input element and attach an event listener to it.
